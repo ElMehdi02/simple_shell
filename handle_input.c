@@ -9,7 +9,7 @@
 
 char **tokenizez(char *str, char *delim)
 {
-	char **token = NULL;
+	char **tokens = NULL;
 	char *token = NULL;
 	int i = 0, bufsize = 0;
 
@@ -17,12 +17,12 @@ char **tokenizez(char *str, char *delim)
 		return (NULL);
 	bufsize = _strlen(str);
 	tokens = malloc(sizeof(char *) * bufsize);
-	if (token == NULL)
+	if (tokens == NULL)
 		return (NULL);
 	token = strtok(str, delim);
 	while (token != NULL)
 	{
-		token[i] = token;
+		tokens[i] = token;
 		token = strtok(NULL, delim);
 		i++;
 	}
@@ -35,7 +35,7 @@ char **tokenizez(char *str, char *delim)
  * handling ; and run multiple commands
  * @buf: buffer to store the input
  * @env: environment variables
- * @av: arguments vector 
+ * @av: arguments vector
  * Return: 0 on success
  */
 
@@ -48,15 +48,15 @@ int handle_input(char *buf, char **env, char **av)
 	cmd = malloc(sizeof(char *) * bufsize);
 	if (cmd == NULL)
 		return (-1);
-	tokens = tokenizez(buf, ";\n"):
-		while (tokens[i] != NULL)
-		{
-			cmd = tokenizez(tokens[i], " \t\r\n\a");
-			if (cmd[0] != NULL)
-				run_cmd(cmd, env, av);
-			free(cmd);
-			i++;
-		}
+	tokens = tokenizez(buf, ";\n");
+	while (tokens[i] != NULL)
+	{
+		cmd = tokenizez(tokens[i], " \t\r\n\a");
+		if (cmd[0] != NULL)
+			run_cmd(cmd, env, av);
+		free(cmd);
+		i++;
+	}
 	free(tokens);
 	return (0);
 }
@@ -69,5 +69,5 @@ int handle_input(char *buf, char **env, char **av)
 void sigint_handler(int signal)
 {
 	(void)signal;
-	write(SRDOUT_FILENO, "\n$ ", 3);
+	write(STDOUT_FILENO, "\n$ ", 3);
 }
