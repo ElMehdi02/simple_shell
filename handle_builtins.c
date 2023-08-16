@@ -11,8 +11,8 @@ void print_env(char **env)
 
 	while (env[i] != NULL)
 	{
-		write(STDOUT_FILEND, env[i], _strlen(env[i]));
-		write(STDOUT_FILEND, "\n", 1);
+		write(STDOUT_FILENO, env[i], _strlen(env[i]));
+		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}
 }
@@ -26,7 +26,7 @@ void print_env(char **env)
 
 int builtins(char **tokens, char **env)
 {
-	if (handle_builtins1(token, env))
+	if (handle_builtins1(tokens, env))
 		return (1);
 	if (handle_builtins2(tokens))
 		return (1);
@@ -37,7 +37,7 @@ int builtins(char **tokens, char **env)
 
 /**
  * handle_builtins1 - handles the builtins
- * @token: array of strings
+ * @tokens: array of strings
  * @env: environment variables
  * Return: 1 if the command is a builtin, 0 if not
  */
@@ -46,14 +46,14 @@ int handle_builtins1(char **tokens, char **env)
 {
 	int i = 0;
 
-	if (_strncmp(token[0], "exit", 4) == 0)
+	if (_strncmp(tokens[0], "exit", 4) == 0)
 		exit(EXIT_SUCCESS);
-	if (_strncmp(token[0], "env", 3) == 0)
+	if (_strncmp(tokens[0], "env", 3) == 0)
 	{
 		while (env[i] != NULL)
 		{
-			write(STDOUT_FILEND, env[i], _strlen(env[i]));
-			write(STDOUT_FILEND, "\n", 1);
+			write(STDOUT_FILENO, env[i], _strlen(env[i]));
+			write(STDOUT_FILENO, "\n", 1);
 			i++;
 		}
 		return (1);
@@ -73,7 +73,7 @@ int handle_builtins2(char **tokens)
 	{
 		if (tokens[1] == NULL)
 		{
-			write(STDERR_FILEND, "Usage: setenv [VARIABLE] [VALUE]\n", 33);
+			write(STDERR_FILENO, "Usage: setenv [VARIABLE] [VALUE]\n", 33);
 			return (1);
 		}
 		if (tokens[2] == NULL)
@@ -82,20 +82,20 @@ int handle_builtins2(char **tokens)
 		}
 		return (1);
 	}
-	if (_strncmp(token[0], "unsetenv", 8) == 0)
+	if (_strncmp(tokens[0], "unsetenv", 8) == 0)
 	{
 		if (tokens[1] == NULL)
 		{
-			write(STDERR_FILEND, "Usage: unseten [VARIABLE]\n", 27);
+			write(STDERR_FILENO, "Usage: unsetenv [VARIABLE]\n", 27);
 			return (1);
 		}
 		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 /**
- * handle_builtins3 - handle the builtins
+ * handle_builtins3 - handles the builtins
  * @tokens: array of strings
  * Return: 1 if the command is a builtin, 0 if not
  */
@@ -104,12 +104,12 @@ int handle_builtins3(char **tokens)
 {
 	if (_strncmp(tokens[0], "clear", 5) == 0)
 	{
-		write(STDOUT_FILEND, "\033[H\033[J", 6);
+		write(STDOUT_FILENO, "\033[H\033[J", 6);
 		return (1);
 	}
 	if (_strncmp(tokens[0], "echo", 4) == 0)
 	{
-		handle_echo(token, NULL);
+		handle_echo(tokens, NULL);
 		return (1);
 	}
 	if (_strncmp(tokens[0], "cd", 2) == 0)
