@@ -20,11 +20,11 @@ int _atoi(char *str)
 			break;
 		i++;
 	}
-	return (num *sign);
+	return (num * sign);
 }
 
 /**
- * _itoa - converts an integer ta a string
+ * _itoa - converts an integer to a string
  * @num: integer to be converted
  * Return: pointer to the converted string
  */
@@ -32,11 +32,11 @@ int _atoi(char *str)
 char *_itoa(int num)
 {
 	int i = 0, j = 0, k = 0, l = 0, m = 0;
-	char 8str = NULL;
+	char *str = NULL;
 
 	if (num == 0)
 	{
-		str =  malloc(sizeof(char) * 2);
+		str = malloc(sizeof(char) * 2);
 		if (str == NULL)
 			return (NULL);
 		str[0] = '0';
@@ -104,9 +104,9 @@ int _constcharlen(const char *str)
 }
 
 /**
- * print_errer - prints an error message
+ * print_error - prints an error message
  * @argv: name of the program
- * @count: number of command entered
+ * @count: number of commands entered
  * @cmd: command entered
  * @msg: error message
  */
