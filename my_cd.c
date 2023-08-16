@@ -7,14 +7,14 @@
 
 void my_cd(char **args)
 {
-	char **directories = NULL, *oldpwd = NULL, *home= NULL;
+	char **directories = NULL, *oldpwd = NULL, *home = NULL;
 
 	if (args[1] == NULL)
 	{
 		home = _getenv("HOME");
 		if (home == NULL)
 		{
-			write(STDOUT_FILENO, "cd: HOME not set\n", 17);
+			write(STDERR_FILENO, "cd: HOME not set\n", 17);
 			return;
 		}
 		directories = malloc(sizeof(char *) * 2);
@@ -50,9 +50,9 @@ void my_cd(char **args)
 }
 
 /**
- * change-directory - changes the current working directory
+ * change_directory - changes the current working directory
  * @directories: directories to change to
- * @command_name; name of the command
+ * @command_name: name of the command
  */
 
 void change_directory(char **directories, char *command_name)
