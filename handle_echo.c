@@ -44,7 +44,7 @@ void handle_echo_args(char *tokens, int *status)
 
 	if (tokens == NULL)
 	{
-		write(STDOUT_FILEND, "\n", 1);
+		write(STDOUT_FILENO, "\n", 1);
 		return;
 	}
 	if (_strncmp(tokens, "$", 1) == 0)
@@ -52,8 +52,8 @@ void handle_echo_args(char *tokens, int *status)
 		value = get__env(tokens + 1);
 		if (value != NULL)
 		{
-			write(STDOUT_FILEND, value, _strlen(value));
-			write(STDOUT_FILEND, "\n", 1);
+			write(STDOUT_FILENO, value, _strlen(value));
+			write(STDOUT_FILENO, "\n", 1);
 			return;
 		}
 	}
