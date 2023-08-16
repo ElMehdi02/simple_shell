@@ -19,7 +19,7 @@ ssize_t _getline(char **buffer, size_t *bufsize, int fd)
 		*buffer = malloc(sizeof(char) * READ_SIZE);
 		if (*buffer == NULL)
 			return (-1);
-		*bufsize = READ-SIZE;
+		*bufsize = READ_SIZE;
 	}
 	n_characters = read(fd, *buffer, *bufsize);
 	if (n_characters == -1)
@@ -27,5 +27,5 @@ ssize_t _getline(char **buffer, size_t *bufsize, int fd)
 		free(*buffer);
 		return (-1);
 	}
-	retrun (n_characters);
+	return (n_characters);
 }
