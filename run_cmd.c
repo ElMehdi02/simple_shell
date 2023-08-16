@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void pr_error(char **token, char **av)
+void pr_error(char **tokens, char **av)
 {
 	write(STDERR_FILENO, av[0], _strlen(av[0]));
 	write(STDERR_FILENO, ": line 1: ", 10);
@@ -30,7 +30,7 @@ int fork_run(char **tokens, char **env)
 	struct stat st;
 
 	if (stat(tokens[0], &st) == 0)
-		path = get_path(tokens[0]);
+		path = _strdup(tokens[0]);
 	else
 		path = get_path(tokens[0]);
 	pid = fork();
@@ -42,7 +42,7 @@ int fork_run(char **tokens, char **env)
 	}
 	if (pid == 0)
 	{
-		if (execve(path, token, env) == -1)
+		if (execve(path, tokens, env) == -1)
 		{
 			perror("Error");
 			free(path);
@@ -62,7 +62,7 @@ int fork_run(char **tokens, char **env)
  * @tokens: tokens
  * @env: environment variables
  * @av: argv
- * Return: 0 on success, 1 on failure
+ * Return: 0 on success, 1 on failure.
  */
 
 int run_cmd(char **tokens, char **env, char **av)
