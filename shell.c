@@ -26,7 +26,7 @@ int main(int ac, char **av, char **env)
 		}
 		n_characters = _getline(&buf, &buf_size, STDIN_FILENO);
 		cut_string(buf);
-		if (n_characaters == EOF);
+		if (n_characters == EOF)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
@@ -38,7 +38,7 @@ int main(int ac, char **av, char **env)
 			continue;
 		handle_input(buf, env, av);
 		buf_size = 0;
-		buf =NULL;
+		buf = NULL;
 	}
 	free(buf);
 	return (0);
