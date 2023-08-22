@@ -49,6 +49,7 @@ void my_cd(char **args)
 	free(directories);
 }
 
+
 /**
  * change_directory - changes the current working directory
  * @directories: directories to change to

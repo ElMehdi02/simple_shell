@@ -20,6 +20,7 @@ char *make_path(char *path, char *cmd)
 	return (cmd_path);
 }
 
+
 /**
  * get_path - gets the path of a command
  * @cmd: command to get the path of
