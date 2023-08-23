@@ -28,5 +28,5 @@ To run the shell by piping an input file!
     $ ./make_.py pipe input_file_name
 ```
 Note: input_file_name needs to exist and contain a command in each line.
-* **BENSOUDA EL MEHDI** - [bensoudamehdi6@gmail.com](https://github.com/ElMehdi02)
-* **OUSSAMA EL MEFTAHI** - [elmeftahioussama@gmail.com](https://github.com/osmmf)
+* **BENSOUDA EL MEHDI** - [bensoudamehdi6@gmail.com](https://github.com/ElMehdi02).
+* **OUSSAMA EL MEFTAHI** - [elmeftahioussama@gmail.com](https://github.com/osmmf).
