@@ -90,4 +90,3 @@ char **str_tok2(char *str, char d)
 	s[j] = NULL;
 	return (s);
 }
-
