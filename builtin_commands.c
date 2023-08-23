@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _myexit - exits the shell
- * @info: Structure containing potential arguments. Used to maintain
+ * _myexit - exits the shell.
+ * @info: Structure containing potential arguments. Used to maintain.
  * constant function prototype.
  * Return: exits with a given exit status
  * (0) if info.argv[0] != "exit"
@@ -30,7 +30,7 @@ int _myexit(info_st *info)
 }
 
 /**
- * _myhelp - changes the current directory of the process
+ * _myhelp - changes the current directory of the process.
  * @info: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  *  Return: Always 0
@@ -48,8 +48,8 @@ int _myhelp(info_st *info)
 }
 
 /**
- * print_alias - prints an alias string
- * @node: the alias node
+ * print_alias - prints an alias string.
+ * @node: the alias node.
  *
  * Return: Always 0 on success, 1 on error
  */
