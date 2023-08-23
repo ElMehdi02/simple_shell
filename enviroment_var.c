@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _myenv - prints the current env
- * @info: structure
+ * _myenv - prints the current env.
+ * @info: structure.
  * Return: Always 0
  */
 int _myenv(info_st *info)
@@ -11,9 +11,9 @@ int _myenv(info_st *info)
 }
 
 /**
- * _getenv - gets the value of an environ variable
- * @info: structure
- * @name: enviroment variable name
+ * _getenv - gets the value of an environ variable.
+ * @info: structure.
+ * @name: enviroment variable name.
  * Return: env value
  */
 char *_getenv(info_st *info, const char *name)
@@ -32,8 +32,8 @@ char *_getenv(info_st *info, const char *name)
 }
 
 /**
- * get_environ - returns the string array copy of our environ
- * @info: struct
+ * get_environ - returns the string array copy of our environ.
+ * @info: struct.
  * Return: environ
  */
 char **get_environ(info_st *info)
