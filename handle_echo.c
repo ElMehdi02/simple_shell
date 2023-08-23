@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * get__env - gets the environment variable
  * @key: key to get the value of
