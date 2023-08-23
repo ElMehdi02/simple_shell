@@ -1,5 +1,5 @@
 # simple shell
-A simple UNIX command interpreter in C.
+A simple UNIX command interpreter in C .
 # Quick start and instructions
 
 To Compile
