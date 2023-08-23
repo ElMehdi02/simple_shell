@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _puts - print the string
+ * _puts - print the string.
  * @str: strings to print
  *
- * Return: nothing
+ * Return: nothing.
  */
 
 void _puts(const char *str)
