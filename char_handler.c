@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * grid_free - free grid of int ptrs
- * @grid: char double ptr freed
+ * grid_free -  free grid of int ptrs
+ * @gridd: Char double ptr freed
  * @_height: int for height to be passed
  * Return: void
  */
@@ -12,18 +12,20 @@ void grid_free(char **gridd, int _height)
 	int k;
 
 	for (k = 0; k < _height; k++)
-		free(grid[k]);
+		free(gridd[k]);
 
 	free(gridd);
 }
 
+
 /**
- * no_nul - remov new line using NULL char
- * @l: c_lin
+ * no_nul - remov  new line using NULL char
+ * @l:   c_lin
  * Return: nothing
  */
 void no_nul(char *l)
 {
+
 	int i = 0;
 
 	while (l[i])
@@ -40,13 +42,13 @@ void no_nul(char *l)
 
 
 /**
- * char_special - exits shell and handles
- * @byt: nbr of byt read from inpt
- * @buffer: buffer char
- * @exit_st: exit status
- * return: 0 success
+ * char_special - exits   shell and handles
+ * @byt:   nbr of byt read from  inpt
+ * @buffer:   buffer char
+ * @exit_st:   exit status
+ * Return: 0 succces
  */
-int char_special(char *buffer, ssize_t byt, int *exit_st)
+int  char_special(char *buffer, ssize_t byt, int *exit_st)
 {
 	int i = 0;
 
