@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * hsh - main shell loop
- * @info: struct
- * @av: argument vector
+ * hsh - main shell loop.
+ * @info: struct.
+ * @av: argument vector.
  * Return: 0 on success, 1 on error
  */
 int hsh(info_st *info, char **av)
@@ -40,8 +40,8 @@ int hsh(info_st *info, char **av)
 }
 
 /**
- * find_builtin - finds a builtin command
- * @info: struct
+ * find_builtin - finds a builtin command.
+ * @info: struct.
  * Return: -1 for builtin not found
  *	0 if builtin executed successfully
  *	1 if builtin found but not successful
