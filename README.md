@@ -3,4 +3,3 @@ This is a simple UNIX command line interpreter implemented in C. It provides a b
 ### Authors
 * **BENSOUDA EL MEHDI** - [bensoudamehdi6@gmail.com](https://github.com/ElMehdi02)
 * **OUSSAMA EL MEFTAHI** - [elmeftahioussama@gmail.com](https://github.com/osmmf)
-    $ ./make_.py build
