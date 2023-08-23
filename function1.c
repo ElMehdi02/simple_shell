@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_error - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
+ * print_error - prints an error message.
+ * @info: the parameter & return info struct.
+ * @estr: string containing specified error type.
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
@@ -19,9 +19,9 @@ void print_error(info_st *info, char *estr)
 	_eputs(estr);
 }
 /**
- * print_d - function prints a decimal number
- * @input: the input
- * @fd: the filedescriptor to write to
+ * print_d - function prints a decimal number.
+ * @input: the input.
+ * @fd: the filedescriptor to write to.
  * Return: number of characters printed
  */
 int print_d(int input, int fd)
@@ -56,8 +56,8 @@ int print_d(int input, int fd)
 	return (count);
 }
 /**
-* interactive - returns true if shell is interactive mode
-* @info: struct address
+* interactive - returns true if shell is interactive mode.
+* @info: struct address.
 **
 *Return: 1 if interactive mode, 0 otherwise
 */
